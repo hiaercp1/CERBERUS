@@ -23,9 +23,9 @@ def Encryption():
         if lop < 14:
             print("Password must be 16 characters or longer!!!")
         else:
-                secondpassword = password.encode(encoding='utf-8')
+            secondpassword = password.encode(encoding='utf-8')
 
-                for file in fls:
+            for file in fls:
                 with open(file, "rb") as x:
                     contentoffile = x.read()
                     cipher = AES.new(secondpassword,AES.MODE_ECB)
@@ -54,12 +54,12 @@ def Decryption():
         if lop < 14:
                 print("Password must be 16 characters or longer!!!")
         else:
-                secondpassword = password.encode(encoding='utf-8')
-                for file in fls:
+            secondpassword = password.encode(encoding='utf-8')
+            for file in fls:
                 with open(file, "rb") as x:
                     contentoffile = x.read()
-                        cipher = AES.new(secondpassword,AES.MODE_ECB)
-                        dcontent = unpad(cipher.decrypt(contentoffile), AES.block_size)
+                    cipher = AES.new(secondpassword,AES.MODE_ECB)
+                    dcontent = unpad(cipher.decrypt(contentoffile), AES.block_size)
                 with open(file, "wb") as y:
                         y.write(dcontent)
 
