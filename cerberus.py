@@ -65,7 +65,7 @@ def Decryption():
 
 for argm in sys.argv[0:]:
     if os.path.isfile(argm):
-        if argm != "this.py":
+        if argm != "cerberus.py" or argm != "cerberus":
             fls.append(argm)
         else:
             continue
